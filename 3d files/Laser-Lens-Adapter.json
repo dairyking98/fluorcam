@@ -1,0 +1,16 @@
+{
+    "fileFormatVersion": "1",
+    "parameterSets": {
+        "New set 1": {
+            "$fn": "60",
+            "counterbore1_diameter": "20.300000000000001",
+            "counterbore1_length": "30",
+            "laser_beamdiameter": "9",
+            "laser_diameter": "11.5",
+            "thread_length": "3.2999999999999998",
+            "thread_majordiameter": "19",
+            "xsection": "false",
+            "z": "0.001"
+        }
+    }
+}
