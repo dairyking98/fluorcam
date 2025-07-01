@@ -32,7 +32,9 @@ $fn=60;
 z=.001;
 
 //pitch of thread (RMS)
-thread_pitch=1*25.4/36;
+//thread_pitch=1*25.4/36;
+
+thread_pitch=.5;
 //thread major diameter
 thread_majordiameter=19;
 //thread length

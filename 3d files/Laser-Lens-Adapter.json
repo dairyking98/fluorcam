@@ -11,6 +11,17 @@
             "thread_majordiameter": "19",
             "xsection": "false",
             "z": "0.001"
+        },
+        "June24,2025 new coax": {
+            "$fn": "60",
+            "counterbore1_diameter": "19.5",
+            "counterbore1_length": "30",
+            "laser_beamdiameter": "9",
+            "laser_diameter": "11.5",
+            "thread_length": "3.2999999999999998",
+            "thread_majordiameter": "17",
+            "xsection": "false",
+            "z": "0.001"
         }
     }
 }
