@@ -86,10 +86,16 @@ module coax_cyl(){
     
 }
 
-module coax_shape(){
+module coax_shape1(){
     cylinder(d=53.7, h=4.3);
-    translate([0, 0, -51])
-    cylinder(d=collar_ID, h=51.1);
+    translate([0, 0, -21])
+    cylinder(d=collar_ID, h=21.1);
+}
+
+module coax_shape2(){
+    cylinder(d=52.5, h=2);
+    translate([0, 0, -28])
+    cylinder(d=50.7, h=28.1);
 }
 
 module remove_coax(){
@@ -97,6 +103,11 @@ deg=150;
 rotate([0, 0, -deg/2-90])
 rotate_extrude(angle=deg){
 square(200);}
+rotate_extrude(){
+
+translate([0, -200])
+square([collar_ID/2, 400]);
+}
 }
 
 module Subtractive(){
@@ -110,12 +121,18 @@ module Subtractive(){
         }
     }
     
-    for (n=[0:15]){
+//    for (n=[0:6]){
     
-    translate([0, -collar_ID/2, yoffset_zheight+n*6])
-    coax_shape();
+    for (n=[45]){
+    translate([0, -collar_ID/2, yoffset_zheight+n])
+    #coax_shape1();
     
     }
+    
+    translate([0, -collar_ID/2, yoffset_zheight+63])
+    #coax_shape2();
+    
+//    }
     translate([0, -collar_ID/2, -20])
     remove_coax();
     
