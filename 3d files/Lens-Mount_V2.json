@@ -1,14 +1,14 @@
 {
     "fileFormatVersion": "1",
     "parameterSets": {
-        "New set 1": {
+        "July16_V4": {
             "$fn": "60",
             "$slop": "0.050000000000000003",
             "gusset_thickness": "3.5",
             "hotend_mount_y": "44.5",
             "hotend_mountdiameter": "3",
             "hotend_mountseparation": "40",
-            "hotend_xyz": "[65, 59.5, 7]",
+            "hotend_xyz": "[66, 59.5, 7]",
             "tower_thickness": "15",
             "yoffset_zheight": "22"
         }

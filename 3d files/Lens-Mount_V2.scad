@@ -35,6 +35,8 @@ tower_thickness=15;
 collar_ID=48.2;
 collar_lip_zheight=52;
 
+hotend_carrier_thickness=17.5;
+
 
 
 //y offset height
@@ -58,7 +60,7 @@ module Additive(){
     
     hull(){
     translate([0, 0, hotend_xyz[2]])
-    cube([hotend_xyz[0], 4, hotend_xyz[2]+10.04+3], anchor=BACK+TOP);
+    cube([hotend_xyz[0], 4, hotend_xyz[2]+hotend_carrier_thickness+3], anchor=BACK+TOP);
     
 
     
@@ -70,7 +72,7 @@ module Additive(){
     
     
     }
-    translate([0, 0, -10.04-3])
+    translate([0, 0, -hotend_carrier_thickness-3])
     cube([hotend_xyz[0], 4+4, 3], anchor=FRONT+BOT);
     
         
@@ -78,7 +80,7 @@ module Additive(){
 
 module coax_cyl(){
     difference(){
-    cylinder(d=hotend_xyz[0], h=collar_lip_zheight+40);
+    cylinder(d=hotend_xyz[0], h=collar_lip_zheight+40+50);
     
     remove_coax();
     
@@ -123,13 +125,13 @@ module Subtractive(){
     
 //    for (n=[0:6]){
     
-    for (n=[45]){
+    for (n=[63+50]){//45
     translate([0, -collar_ID/2, yoffset_zheight+n])
     #coax_shape1();
     
     }
     
-    translate([0, -collar_ID/2, yoffset_zheight+63])
+    translate([0, -collar_ID/2, yoffset_zheight+63+30])//+63
     #coax_shape2();
     
 //    }
@@ -139,7 +141,7 @@ module Subtractive(){
 //    translate([0, -collar_ID/2, 0])
 //    cube(200, anchor=BACK);
 
-    cube([100, 100, 10.04], anchor=TOP+FRONT);
+    cube([100, 100, hotend_carrier_thickness], anchor=TOP+FRONT);
     
 }
 
